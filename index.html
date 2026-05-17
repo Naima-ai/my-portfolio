@@ -27,6 +27,184 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <style>
+    /* ── Professional Experience Section ── */
+    .experience-section {
+      padding: 60px 0;
+      background: #fff;
+    }
+
+    .experience-timeline {
+      position: relative;
+      padding-left: 30px;
+    }
+
+    .experience-timeline::before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, #0563bb 0%, #a8c8f8 100%);
+    }
+
+    .exp-item {
+      position: relative;
+      margin-bottom: 40px;
+      padding: 24px 28px;
+      background: #f8fbff;
+      border: 1px solid #e0ecff;
+      border-radius: 10px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .exp-item:hover {
+      box-shadow: 0 8px 28px rgba(5, 99, 187, 0.10);
+      transform: translateY(-2px);
+    }
+
+    .exp-item::before {
+      content: '';
+      position: absolute;
+      left: -26px;
+      top: 26px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #0563bb;
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 2px #0563bb;
+    }
+
+    .exp-badge-current {
+      display: inline-block;
+      background: #e6f4ea;
+      color: #2e7d32;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      padding: 2px 10px;
+      border-radius: 20px;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+
+    .exp-date {
+      font-size: 13px;
+      color: #0563bb;
+      font-weight: 600;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .exp-date i {
+      font-size: 14px;
+    }
+
+    .exp-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #173b6c;
+      margin: 4px 0 2px;
+    }
+
+    .exp-org {
+      font-size: 14px;
+      color: #555;
+      font-weight: 500;
+      margin-bottom: 14px;
+    }
+
+    .exp-org i {
+      color: #0563bb;
+      margin-right: 4px;
+    }
+
+    .exp-summary {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+    .exp-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .exp-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.3px;
+    }
+
+    .exp-tag.blue  { background: #e8f0fe; color: #1a56db; }
+    .exp-tag.teal  { background: #e6f7f5; color: #0d7a6b; }
+    .exp-tag.purple{ background: #f3eeff; color: #6d28d9; }
+    .exp-tag.orange{ background: #fff4e6; color: #c05621; }
+    .exp-tag.green { background: #e6f4ea; color: #2e7d32; }
+    .exp-tag.pink  { background: #fce8f3; color: #9d174d; }
+
+    .exp-highlight {
+      font-weight: 700;
+      color: #0563bb;
+    }
+
+    /* ── Collapsible Projects ── */
+    .portfolio-more-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 32px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 600;
+      color: #0563bb;
+      border: 2px solid #0563bb;
+      border-radius: 50px;
+      padding: 10px 30px;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      background: #fff;
+      transition: background 0.2s, color 0.2s;
+      user-select: none;
+    }
+
+    .portfolio-more-toggle:hover {
+      background: #0563bb;
+      color: #fff;
+    }
+
+    .portfolio-more-toggle .toggle-icon {
+      transition: transform 0.3s ease;
+      font-size: 18px;
+    }
+
+    .portfolio-more-toggle.open .toggle-icon {
+      transform: rotate(180deg);
+    }
+
+    .portfolio-hidden {
+      display: none;
+    }
+
+    .portfolio-hidden.show {
+      display: contents;
+    }
+  </style>
+
   <!-- =======================================================
   * Template Name: iPortfolio
   * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
@@ -61,6 +239,7 @@
       <ul>
         <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
         <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
+        <li><a href="#experience"><i class="bi bi-briefcase navicon"></i> Experience</a></li>
         <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
         <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
       </ul>
@@ -74,9 +253,10 @@
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <h1>Hi this is</h1>
         <h2>Naima Tasnia</h2>
-        <p>A <span class="typed" data-typed-items="Data Analyst, Data Scientist, AI Researcher"></span></p>
+        <p>A <span class="typed" data-typed-items="AI Specialist, Data Analyst, AI Researcher"></span></p>
       </div>
     </section><!-- /Hero Section -->
+
     <!-- About Section -->
     <section id="about" class="about section">
       <div class="container section-title" data-aos="fade-up">
@@ -97,7 +277,78 @@
           </p>     
        </div>
     
-    </section><!-- /About Section -->   
+    </section><!-- /About Section -->
+
+    <!-- Professional Experience Section -->
+    <section id="experience" class="experience-section section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Professional Experience</h2>
+        <p>A journey through the roles that have shaped my expertise in AI, data science, and research.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="experience-timeline">
+
+          <!-- Experience 1 -->
+          <div class="exp-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="exp-date">
+              <i class="bi bi-calendar3"></i> Dec 2025 – Present
+              <span class="exp-badge-current">Current</span>
+            </div>
+            <div class="exp-title">AI Consultant</div>
+            <div class="exp-org"><i class="bi bi-building"></i> Loop AI Global LLC &nbsp;·&nbsp; <i class="bi bi-wifi"></i> Remote</div>
+            <p class="exp-summary">
+              Building and shaping a <span class="exp-highlight">Cognitive Computing Platform</span> — from algorithm design to architecture improvements. Fine-tuned <span class="exp-highlight">SLMs for healthcare AI agents</span> and drives applied R&amp;D across the full stack.
+            </p>
+            <div class="exp-tags">
+              <span class="exp-tag blue"><i class="bi bi-cpu"></i> Cognitive AI</span>
+              <span class="exp-tag purple"><i class="bi bi-heart-pulse"></i> Healthcare SLMs</span>
+              <span class="exp-tag teal"><i class="bi bi-diagram-3"></i> AI Agents</span>
+              <span class="exp-tag orange"><i class="bi bi-flask"></i> Applied R&amp;D</span>
+            </div>
+          </div>
+
+          <!-- Experience 2 -->
+          <div class="exp-item" data-aos="fade-up" data-aos-delay="150">
+            <div class="exp-date">
+              <i class="bi bi-calendar3"></i> Jan 2026 – Present
+              <span class="exp-badge-current">Current</span>
+            </div>
+            <div class="exp-title">AI Specialist Intern</div>
+            <div class="exp-org"><i class="bi bi-building"></i> SN Group of Companies &nbsp;·&nbsp; <i class="bi bi-wifi"></i> Remote</div>
+            <p class="exp-summary">
+              Built a <span class="exp-highlight">24/7 AI customer support agent</span> for a seafood business and designed <span class="exp-highlight">workflow automation</span> that slashed manual marketing effort. Also configured <span class="exp-highlight">AI-driven dynamic Ads</span> to boost engagement and conversions.
+            </p>
+            <div class="exp-tags">
+              <span class="exp-tag blue"><i class="bi bi-robot"></i> AI Agents</span>
+              <span class="exp-tag green"><i class="bi bi-gear-wide-connected"></i> Workflow Automation</span>
+              <span class="exp-tag pink"><i class="bi bi-megaphone"></i> AI-Driven Ads</span>
+              <span class="exp-tag teal"><i class="bi bi-graph-up-arrow"></i> Business Ops</span>
+            </div>
+          </div>
+
+          <!-- Experience 3 -->
+          <div class="exp-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="exp-date">
+              <i class="bi bi-calendar3"></i> Mar 2024 – Aug 2025
+            </div>
+            <div class="exp-title">Research Assistant</div>
+            <div class="exp-org"><i class="bi bi-building"></i> Research Activator Lab &nbsp;·&nbsp; <i class="bi bi-geo-alt"></i> Chittagong, Bangladesh</div>
+            <p class="exp-summary">
+              Published <span class="exp-highlight">9 IEEE papers + 1 IEEE Access journal</span> across ML, DL, and computer vision. Earned a <span class="exp-highlight">research score of 28+</span> with 50+ ResearchGate recommendations — and presented findings at international conferences.
+            </p>
+            <div class="exp-tags">
+              <span class="exp-tag blue"><i class="bi bi-journal-text"></i> 10 Publications</span>
+              <span class="exp-tag purple"><i class="bi bi-eyeglasses"></i> Computer Vision</span>
+              <span class="exp-tag teal"><i class="bi bi-braces"></i> ML / Deep Learning</span>
+              <span class="exp-tag orange"><i class="bi bi-trophy"></i> Research Score 28+</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- /Professional Experience Section -->
+
     <!-- Skills Section -->
     <section id="skills" class="skills section light-background">
 
@@ -217,41 +468,41 @@
         <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
           </ul><!-- End Portfolio Filters -->
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+
+            <!-- VISIBLE: First 3 projects -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
               <div class="portfolio-content h-100">
                 <img src="assets/img/log.png" class="img-fluid" alt="">
                 <div class="portfolio-info">
                   <h4>Software Log Classification System Using Hybrid Classifiers</h4>
                   <p>This project implements a hybrid log classification system, combining three approaches-(BERT, LLM, and REGEX) to handle varying levels of complexity in log patterns. 
                   </p>
-                  <!-- View Code Link -->
                   <a href="https://github.com/Naima-ai/Log-Classification-System" target="_blank" title="View" class="preview-link">
                     <i class="bi bi-code-slash"></i>
                   </a>
-                  <!-- Live Website Link -->
                   <a href="https://log-classification-systems.streamlit.app/" target="_blank" title="Live" class="details-link">
                     <i class="bi bi-box-arrow-up-right"></i>
                   </a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
+
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
               <div class="portfolio-content h-100">
                 <img src="assets/img/customer_churn.png" class="img-fluid" alt="">
                 <div class="portfolio-info">
                   <h4>Bank Customer Churn Analysis And Prediction</h4>
                   <p>Predicts Customer Churn with 85% accuracy and recommended actions to reduce churn rate</p>
-                  <!-- View Code Link -->
                   <a href="https://github.com/Naima-ai/Customer-Churn-Analysis" target="_blank" title="View" class="preview-link">
                     <i class="bi bi-code-slash"></i>
                   </a>
-                  <!-- Live Website Link -->
                   <a href="https://bank-customer-churn-analysis.streamlit.app/" target="_blank" title="Live" class="details-link">
                     <i class="bi bi-box-arrow-up-right"></i>
                   </a>
                 </div>
               </div>
             </div><!-- End Portfolio Item --> 
+
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
               <div class="portfolio-content h-100">
                 <img src="assets/img/productivity.jpeg" class="img-fluid" alt="">
@@ -259,92 +510,91 @@
                   <h4>EDA on Grament Productivity Prediction</h4>
                   <p>Highlights the key indicators of Bangladeshi garment workers productivity through data analysis and perform prediction.
                   </p>
-                  <!-- View Code Link -->
                   <a href="https://github.com/Naima-ai/EDA-on-Garment-Productivity" target="_blank" title="View" class="preview-link">
                     <i class="bi bi-code-slash"></i>
                   </a>
-                  
                 </div>
               </div>
             </div><!-- End Portfolio Item --> 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/Sales_meriSkill.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Sales Dashboard</h4>
-                  <p>The dashboard visualizes key performance metrics to track revenue growth, identify sales trends,
-                    and inform strategic decision-making.
-                  </p>
-                  <!-- View Code Link -->
-                  <a href="https://github.com/Naima-ai/Sales_Dashboard" target="_blank" title="View" class="preview-link">
-                    <i class="bi bi-code-slash"></i>
-                  </a>
-                 
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/facial.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Facial Recognition Based attendace System</h4>
-                  <p>Efficiently track attendance based on face detection using python and MySQL.</p>
-                  <!-- View Code Link -->
-                  <a href="https://github.com/Naima-ai/Role-based-facial-recognition-attendance-system" target="_blank" title="View" class="preview-link">
-                    <i class="bi bi-code-slash"></i>
-                  </a>
-                 
+            <!-- HIDDEN: Remaining 5 projects -->
+            <div class="portfolio-hidden" id="portfolio-extra">
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                <div class="portfolio-content h-100">
+                  <img src="assets/img/Sales_meriSkill.jpg" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h4>Sales Dashboard</h4>
+                    <p>The dashboard visualizes key performance metrics to track revenue growth, identify sales trends,
+                      and inform strategic decision-making.
+                    </p>
+                    <a href="https://github.com/Naima-ai/Sales_Dashboard" target="_blank" title="View" class="preview-link">
+                      <i class="bi bi-code-slash"></i>
+                    </a>
+                  </div>
                 </div>
-              </div>
-            </div><!-- End Portfolio Item -->
+              </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/IMG-20221218-WA0025.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>A Bluetooth Controlled Smart-bin</h4>
-                  <p>Eased waste management by automatically controlling bin movement and tracking A Bluetooth Controlled Smart-bin.</p>
-                  <!-- View Code Link -->
-                  <a href="https://github.com/Naima-ai/Smart-Dustbin" target="_blank" title="View" class="preview-link">
-                    <i class="bi bi-code-slash"></i>
-                  </a>
-                  
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                <div class="portfolio-content h-100">
+                  <img src="assets/img/facial.jpg" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h4>Facial Recognition Based attendace System</h4>
+                    <p>Efficiently track attendance based on face detection using python and MySQL.</p>
+                    <a href="https://github.com/Naima-ai/Role-based-facial-recognition-attendance-system" target="_blank" title="View" class="preview-link">
+                      <i class="bi bi-code-slash"></i>
+                    </a>
+                  </div>
                 </div>
-              </div>
-            </div><!-- End Portfolio Item -->
+              </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/imdb.jpeg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Movie Review Sentiment Analysis</h4>
-                  <p>Analysed sentiments usning Python tools to classify moview reviews.</p>
-                  <!-- View Code Link -->
-                  <a href="https://github.com/Naima-ai/Movie-Sentiment-Analysis" target="_blank" title="View" class="preview-link">
-                    <i class="bi bi-code-slash"></i>
-                  </a>
-                 
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                <div class="portfolio-content h-100">
+                  <img src="assets/img/IMG-20221218-WA0025.jpg" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h4>A Bluetooth Controlled Smart-bin</h4>
+                    <p>Eased waste management by automatically controlling bin movement and tracking A Bluetooth Controlled Smart-bin.</p>
+                    <a href="https://github.com/Naima-ai/Smart-Dustbin" target="_blank" title="View" class="preview-link">
+                      <i class="bi bi-code-slash"></i>
+                    </a>
+                  </div>
                 </div>
-              </div>
-            </div><!-- End Portfolio Item -->
+              </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/credit.jpeg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Credit Card Fraud Detection</h4>
-                  <p>Analysed credit-card data to identify frauds with 98% accuracy.</p>
-                  <!-- View Code Link -->
-                  <a href="https://github.com/Naima-ai/Codsoft/blob/main/creditcard.ipynb" target="_blank" title="View" class="preview-link">
-                    <i class="bi bi-code-slash"></i>
-                  </a>
-                  
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                <div class="portfolio-content h-100">
+                  <img src="assets/img/imdb.jpeg" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h4>Movie Review Sentiment Analysis</h4>
+                    <p>Analysed sentiments usning Python tools to classify moview reviews.</p>
+                    <a href="https://github.com/Naima-ai/Movie-Sentiment-Analysis" target="_blank" title="View" class="preview-link">
+                      <i class="bi bi-code-slash"></i>
+                    </a>
+                  </div>
                 </div>
-              </div>
-            </div><!-- End Portfolio Item -->
+              </div><!-- End Portfolio Item -->
+
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                <div class="portfolio-content h-100">
+                  <img src="assets/img/credit.jpeg" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h4>Credit Card Fraud Detection</h4>
+                    <p>Analysed credit-card data to identify frauds with 98% accuracy.</p>
+                    <a href="https://github.com/Naima-ai/Codsoft/blob/main/creditcard.ipynb" target="_blank" title="View" class="preview-link">
+                      <i class="bi bi-code-slash"></i>
+                    </a>
+                  </div>
+                </div>
+              </div><!-- End Portfolio Item -->
+            </div><!-- End Hidden Projects -->
 
           </div><!-- End Portfolio Container -->
+
+          <!-- Toggle Button -->
+          <div class="portfolio-more-toggle" id="portfolioToggle" onclick="toggleProjects()">
+            <span id="toggleLabel">Show More Projects</span>
+            <i class="bi bi-chevron-down toggle-icon" id="toggleIcon"></i>
+          </div>
+
         </div>
       </div>
 
@@ -421,17 +671,10 @@
                 <i class="bi bi-geo-alt flex-shrink-0"></i>
                 <div>
                   <h3>Address</h3>
-                  <p>Chittagong, Bangladesh</p>
+                  <p>Padova, Italy</p>
                 </div>
               </div><!-- End Info Item -->
 
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-                <i class="bi bi-telephone flex-shrink-0"></i>
-                <div>
-                  <h3>Phone</h3>
-                  <p>+8801843392831</p>
-                </div>
-              </div><!-- End Info Item -->
 
               <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
                 <i class="bi bi-envelope flex-shrink-0"></i>
@@ -455,7 +698,7 @@
                 <br>
                 <li class="mb-2">
                   <i class="bi bi-translate text-success me-2"></i>
-                  <strong>Language Enthusiast:</strong> I'm currently a French and Dutch beginner!
+                  <strong>Language Enthusiast:</strong> I'm currently an Italian and Dutch beginner!
                 </li>
                 <br>
                 <li>
@@ -551,6 +794,26 @@
     },
       "retina_detect": true
     });
+  </script>
+
+  <!-- Toggle extra portfolio projects -->
+  <script>
+    function toggleProjects() {
+      const extra = document.getElementById('portfolio-extra');
+      const btn = document.getElementById('portfolioToggle');
+      const label = document.getElementById('toggleLabel');
+      const isOpen = extra.classList.contains('show');
+
+      if (isOpen) {
+        extra.classList.remove('show');
+        btn.classList.remove('open');
+        label.textContent = 'Show More Projects';
+      } else {
+        extra.classList.add('show');
+        btn.classList.add('open');
+        label.textContent = 'Show Less';
+      }
+    }
   </script>
 
 <script>
