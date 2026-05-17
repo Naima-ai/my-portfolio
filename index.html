@@ -197,11 +197,11 @@
     }
 
     .portfolio-hidden-item {
-      display: none;
+      display: none !important;
     }
 
     .portfolio-hidden-item.show {
-      display: block;
+      display: block !important;
     }
   </style>
 
@@ -253,7 +253,7 @@
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <h1>Hi this is</h1>
         <h2>Naima Tasnia</h2>
-        <p>A <span class="typed" data-typed-items="AI Specialist, Data Analyst, AI Researcher"></span></p>
+        <p><span class="typed" data-typed-items="AI Specialist, Data Analyst, AI Researcher"></span></p>
       </div>
     </section><!-- /Hero Section -->
 
@@ -302,7 +302,7 @@
             </p>
             <div class="exp-tags">
               <span class="exp-tag blue"><i class="bi bi-cpu"></i> Cognitive AI</span>
-              <span class="exp-tag purple"><i class="bi bi-heart-pulse"></i> Healthcare SLMs</span>
+              <span class="exp-tag purple"><i class="bi bi-heart-pulse"></i> SLMs</span>
               <span class="exp-tag teal"><i class="bi bi-diagram-3"></i> AI Agents</span>
               <span class="exp-tag orange"><i class="bi bi-flask"></i> Applied R&amp;D</span>
             </div>
@@ -335,7 +335,7 @@
             <div class="exp-title">Research Assistant</div>
             <div class="exp-org"><i class="bi bi-building"></i> Research Activator Lab &nbsp;·&nbsp; <i class="bi bi-geo-alt"></i> Chittagong, Bangladesh</div>
             <p class="exp-summary">
-              Published <span class="exp-highlight">9 IEEE papers + 1 IEEE Access journal</span> across ML, DL, and computer vision. Earned a <span class="exp-highlight">research score of 28+</span> with 50+ ResearchGate recommendations — and presented findings at international conferences.
+              Published <span class="exp-highlight">IEEE research papers </span> across ML, DL, and computer vision. Earned a <span class="exp-highlight">research score of 28+</span> with 50+ ResearchGate recommendations — and presented findings at international conferences.
             </p>
             <div class="exp-tags">
               <span class="exp-tag blue"><i class="bi bi-journal-text"></i> 10 Publications</span>
@@ -465,9 +465,7 @@
       </div><!-- End Section Title -->
       <div class="container">
 
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-          </ul><!-- End Portfolio Filters -->
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+        <div class="row gy-4" id="portfolio-grid">
 
             <!-- VISIBLE: First 3 projects -->
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
@@ -485,7 +483,7 @@
                   </a>
                 </div>
               </div>
-            </div><!-- End Portfolio Item -->
+            </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
               <div class="portfolio-content h-100">
@@ -501,7 +499,7 @@
                   </a>
                 </div>
               </div>
-            </div><!-- End Portfolio Item --> 
+            </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
               <div class="portfolio-content h-100">
@@ -515,85 +513,81 @@
                   </a>
                 </div>
               </div>
-            </div><!-- End Portfolio Item --> 
+            </div>
 
             <!-- HIDDEN: Remaining 5 projects -->
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app portfolio-hidden-item">
-                <div class="portfolio-content h-100">
-                  <img src="assets/img/Sales_meriSkill.jpg" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>Sales Dashboard</h4>
-                    <p>The dashboard visualizes key performance metrics to track revenue growth, identify sales trends,
-                      and inform strategic decision-making.
-                    </p>
-                    <a href="https://github.com/Naima-ai/Sales_Dashboard" target="_blank" title="View" class="preview-link">
-                      <i class="bi bi-code-slash"></i>
-                    </a>
-                  </div>
+            <div class="col-lg-4 col-md-6 portfolio-hidden-item">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/Sales_meriSkill.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Sales Dashboard</h4>
+                  <p>The dashboard visualizes key performance metrics to track revenue growth, identify sales trends, and inform strategic decision-making.</p>
+                  <a href="https://github.com/Naima-ai/Sales_Dashboard" target="_blank" title="View" class="preview-link">
+                    <i class="bi bi-code-slash"></i>
+                  </a>
                 </div>
-              </div><!-- End Portfolio Item -->
+              </div>
+            </div>
 
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app portfolio-hidden-item">
-                <div class="portfolio-content h-100">
-                  <img src="assets/img/facial.jpg" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>Facial Recognition Based attendace System</h4>
-                    <p>Efficiently track attendance based on face detection using python and MySQL.</p>
-                    <a href="https://github.com/Naima-ai/Role-based-facial-recognition-attendance-system" target="_blank" title="View" class="preview-link">
-                      <i class="bi bi-code-slash"></i>
-                    </a>
-                  </div>
+            <div class="col-lg-4 col-md-6 portfolio-hidden-item">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/facial.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Facial Recognition Based Attendance System</h4>
+                  <p>Efficiently track attendance based on face detection using Python and MySQL.</p>
+                  <a href="https://github.com/Naima-ai/Role-based-facial-recognition-attendance-system" target="_blank" title="View" class="preview-link">
+                    <i class="bi bi-code-slash"></i>
+                  </a>
                 </div>
-              </div><!-- End Portfolio Item -->
+              </div>
+            </div>
 
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app portfolio-hidden-item">
-                <div class="portfolio-content h-100">
-                  <img src="assets/img/IMG-20221218-WA0025.jpg" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>A Bluetooth Controlled Smart-bin</h4>
-                    <p>Eased waste management by automatically controlling bin movement and tracking A Bluetooth Controlled Smart-bin.</p>
-                    <a href="https://github.com/Naima-ai/Smart-Dustbin" target="_blank" title="View" class="preview-link">
-                      <i class="bi bi-code-slash"></i>
-                    </a>
-                  </div>
+            <div class="col-lg-4 col-md-6 portfolio-hidden-item">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/IMG-20221218-WA0025.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>A Bluetooth Controlled Smart-bin</h4>
+                  <p>Eased waste management by automatically controlling bin movement and tracking a Bluetooth Controlled Smart-bin.</p>
+                  <a href="https://github.com/Naima-ai/Smart-Dustbin" target="_blank" title="View" class="preview-link">
+                    <i class="bi bi-code-slash"></i>
+                  </a>
                 </div>
-              </div><!-- End Portfolio Item -->
+              </div>
+            </div>
 
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app portfolio-hidden-item">
-                <div class="portfolio-content h-100">
-                  <img src="assets/img/imdb.jpeg" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>Movie Review Sentiment Analysis</h4>
-                    <p>Analysed sentiments usning Python tools to classify moview reviews.</p>
-                    <a href="https://github.com/Naima-ai/Movie-Sentiment-Analysis" target="_blank" title="View" class="preview-link">
-                      <i class="bi bi-code-slash"></i>
-                    </a>
-                  </div>
+            <div class="col-lg-4 col-md-6 portfolio-hidden-item">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/imdb.jpeg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Movie Review Sentiment Analysis</h4>
+                  <p>Analysed sentiments using Python tools to classify movie reviews.</p>
+                  <a href="https://github.com/Naima-ai/Movie-Sentiment-Analysis" target="_blank" title="View" class="preview-link">
+                    <i class="bi bi-code-slash"></i>
+                  </a>
                 </div>
-              </div><!-- End Portfolio Item -->
+              </div>
+            </div>
 
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app portfolio-hidden-item">
-                <div class="portfolio-content h-100">
-                  <img src="assets/img/credit.jpeg" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>Credit Card Fraud Detection</h4>
-                    <p>Analysed credit-card data to identify frauds with 98% accuracy.</p>
-                    <a href="https://github.com/Naima-ai/Codsoft/blob/main/creditcard.ipynb" target="_blank" title="View" class="preview-link">
-                      <i class="bi bi-code-slash"></i>
-                    </a>
-                  </div>
+            <div class="col-lg-4 col-md-6 portfolio-hidden-item">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/credit.jpeg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Credit Card Fraud Detection</h4>
+                  <p>Analysed credit-card data to identify frauds with 98% accuracy.</p>
+                  <a href="https://github.com/Naima-ai/Codsoft/blob/main/creditcard.ipynb" target="_blank" title="View" class="preview-link">
+                    <i class="bi bi-code-slash"></i>
+                  </a>
                 </div>
-              </div><!-- End Portfolio Item -->
+              </div>
+            </div>
 
-          </div><!-- End Portfolio Container -->
+          </div><!-- End Portfolio Grid -->
 
           <!-- Toggle Button -->
           <div class="portfolio-more-toggle" id="portfolioToggle" onclick="toggleProjects()">
             <span id="toggleLabel">Show More Projects</span>
             <i class="bi bi-chevron-down toggle-icon" id="toggleIcon"></i>
           </div>
-
-        </div>
       </div>
 
     </section><!-- /Portfolio Section -->
