@@ -196,12 +196,12 @@
       transform: rotate(180deg);
     }
 
-    .portfolio-hidden {
+    .portfolio-hidden-item {
       display: none;
     }
 
-    .portfolio-hidden.show {
-      display: contents;
+    .portfolio-hidden-item.show {
+      display: block;
     }
   </style>
 
@@ -518,8 +518,7 @@
             </div><!-- End Portfolio Item --> 
 
             <!-- HIDDEN: Remaining 5 projects -->
-            <div class="portfolio-hidden" id="portfolio-extra">
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app portfolio-hidden-item">
                 <div class="portfolio-content h-100">
                   <img src="assets/img/Sales_meriSkill.jpg" class="img-fluid" alt="">
                   <div class="portfolio-info">
@@ -534,7 +533,7 @@
                 </div>
               </div><!-- End Portfolio Item -->
 
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app portfolio-hidden-item">
                 <div class="portfolio-content h-100">
                   <img src="assets/img/facial.jpg" class="img-fluid" alt="">
                   <div class="portfolio-info">
@@ -547,7 +546,7 @@
                 </div>
               </div><!-- End Portfolio Item -->
 
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app portfolio-hidden-item">
                 <div class="portfolio-content h-100">
                   <img src="assets/img/IMG-20221218-WA0025.jpg" class="img-fluid" alt="">
                   <div class="portfolio-info">
@@ -560,7 +559,7 @@
                 </div>
               </div><!-- End Portfolio Item -->
 
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app portfolio-hidden-item">
                 <div class="portfolio-content h-100">
                   <img src="assets/img/imdb.jpeg" class="img-fluid" alt="">
                   <div class="portfolio-info">
@@ -573,7 +572,7 @@
                 </div>
               </div><!-- End Portfolio Item -->
 
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app portfolio-hidden-item">
                 <div class="portfolio-content h-100">
                   <img src="assets/img/credit.jpeg" class="img-fluid" alt="">
                   <div class="portfolio-info">
@@ -585,7 +584,6 @@
                   </div>
                 </div>
               </div><!-- End Portfolio Item -->
-            </div><!-- End Hidden Projects -->
 
           </div><!-- End Portfolio Container -->
 
@@ -799,17 +797,17 @@
   <!-- Toggle extra portfolio projects -->
   <script>
     function toggleProjects() {
-      const extra = document.getElementById('portfolio-extra');
+      const items = document.querySelectorAll('.portfolio-hidden-item');
       const btn = document.getElementById('portfolioToggle');
       const label = document.getElementById('toggleLabel');
-      const isOpen = extra.classList.contains('show');
+      const isOpen = btn.classList.contains('open');
 
       if (isOpen) {
-        extra.classList.remove('show');
+        items.forEach(item => item.classList.remove('show'));
         btn.classList.remove('open');
         label.textContent = 'Show More Projects';
       } else {
-        extra.classList.add('show');
+        items.forEach(item => item.classList.add('show'));
         btn.classList.add('open');
         label.textContent = 'Show Less';
       }
